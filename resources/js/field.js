@@ -1,5 +1,9 @@
+import IndexField from "./components/IndexField";
+import DetailField from "./components/DetailField";
+import FormField from "./components/FormField";
+
 Nova.booting((Vue, router) => {
-    Vue.component('index-indicator-field', require('./components/IndexField'));
-    Vue.component('detail-indicator-field', require('./components/DetailField'));
-    Vue.component('form-indicator-field', require('./components/FormField'));
+    Vue.component('index-indicator-field', IndexField);
+    Vue.component('detail-indicator-field', DetailField);
+    Vue.component('form-indicator-field', FormField);
 })

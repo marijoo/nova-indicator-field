@@ -1,6 +1,6 @@
 <template>
     <default-field :field="field">
-        <template slot="field">
+        <template #field>
             <indicator-field :field="field"></indicator-field>
         </template>
     </default-field>

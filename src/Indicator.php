@@ -1,6 +1,6 @@
 <?php
 
-namespace Inspheric\Fields;
+namespace Khalin\Fields;
 
 use Laravel\Nova\Fields\Field;
 
