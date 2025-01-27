@@ -1,4 +1,5 @@
 # Laravel Nova Indicator Field
+
 A colour-coded indicator field for Laravel Nova 4
 
 ## Installation
@@ -6,14 +7,15 @@ A colour-coded indicator field for Laravel Nova 4
 Install the package into a Laravel app that uses [Nova](https://nova.laravel.com) with Composer:
 
 ```bash
-composer require khalin/nova4-indicator-field
+composer require marijoo/nova-indicator-field
 ```
 
 ## Usage
 
-Add the field to your resource in the ```fields``` method:
+Add the field to your resource in the `fields` method:
+
 ```php
-use Khalin\Fields\Indicator;
+use Marijoo\Fields\Indicator;
 
 Indicator::make('Status'),
 ```
@@ -21,7 +23,9 @@ Indicator::make('Status'),
 The field extends the base `Laravel\Nova\Fields\Field` field, so all the usual methods are available.
 
 ### Options
+
 #### Labels
+
 Add your desired status labels:
 
 ```php
@@ -99,6 +103,7 @@ Indicator::make('Status')
 This is a shortcut for a common scenario for the above `shouldHide()` method.
 
 #### Colours
+
 ##### Named Colours
 
 Add your desired status colours:
@@ -118,24 +123,25 @@ The array key is the raw field value and the array value is the desired colour.
 If a colour is not specified for a status, it will be displayed as grey.
 
 The available colours are the default "base" colours from [Tailwind](https://tailwindcss.com/docs/colors), with the addition of black:
-* 'black'   `#22292F`
-* 'grey' or 'gray' `#B8C2CC`
-* 'red'     `#E3342F`
-* 'orange'  `#F6993F`
-* 'yellow'  `#FFED4A`
-* 'green'   `#38C172`
-* 'teal'    `#4DC0B5`
-* 'blue'    `#3490DC`
-* 'indigo'  `#6574CD`
-* 'purple'  `#9561E2`
-* 'pink'    `#F66D9B`
+
+- 'black' `#22292F`
+- 'grey' or 'gray' `#B8C2CC`
+- 'red' `#E3342F`
+- 'orange' `#F6993F`
+- 'yellow' `#FFED4A`
+- 'green' `#38C172`
+- 'teal' `#4DC0B5`
+- 'blue' `#3490DC`
+- 'indigo' `#6574CD`
+- 'purple' `#9561E2`
+- 'pink' `#F66D9B`
 
 As well as the following Nova variable colours:
 
-* 'success' `var(--success)`
-* 'warning' `var(--warning)`
-* 'danger'  `var(--danger)`
-* 'info'    `var(--info)`
+- 'success' `var(--success)`
+- 'warning' `var(--warning)`
+- 'danger' `var(--danger)`
+- 'info' `var(--info)`
 
 Colour classes are not validated against the lists above, so if you enter an invalid colour, it will fall back to grey.
 
@@ -163,7 +169,7 @@ If you want to specify your own colours as reusable classes, you can serve your 
 
 ```css
 .indicator-yourcolourname {
-    background: #000000;
+  background: #000000;
 }
 ```
 
@@ -181,12 +187,15 @@ Indicator::make('Status')
 The field is displayed similarly to the built-in `Laravel\Nova\Fields\Boolean` field, with the ability to have more than a true/false value, and different labels and colours defined.
 
 ### Index
+
 ![index-field](./docs/index-field.png)
 
 ### Detail
+
 ![detail-field](./docs/detail-field.png)
 
 ### Form
+
 (Same as detail.)
 
 The indicator is not displayed on forms by default. If you choose to display it as a form field with `showOnUpdate()`, the indicator is not editable and does not write back to the server, as it is intended to come from a read-only or derived model attribute.

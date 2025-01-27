@@ -1,6 +1,6 @@
 <?php
 
-namespace Khalin\Fields;
+namespace Marijoo\Fields;
 
 use Laravel\Nova\Fields\Field;
 
@@ -98,7 +98,7 @@ class Indicator extends Field
      */
     public function shouldHideIfNo()
     {
-        $this->hideCallback = function($value) {
+        $this->hideCallback = function ($value) {
             return !$value;
         };
 
@@ -118,11 +118,9 @@ class Indicator extends Field
 
         if (is_callable($this->hideCallback)) {
             $shouldHide = call_user_func($this->hideCallback, $this->value, $resource);
-        }
-        elseif (is_array($this->hideCallback)) {
+        } elseif (is_array($this->hideCallback)) {
             $shouldHide = in_array($this->value, $this->hideCallback, false);
-        }
-        else {
+        } else {
             $shouldHide = $this->value == $this->hideCallback;
         }
 
