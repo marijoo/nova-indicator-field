@@ -41,7 +41,7 @@ class Indicator extends Field
      * @param  array  $labels
      * @return $this
      */
-    public function labels(array $labels)
+    public function labels(array $labels): self
     {
         return $this->withMeta(['labels' => $labels, 'withoutLabels' => false]);
     }
@@ -52,7 +52,7 @@ class Indicator extends Field
      * @param  array  $colors
      * @return $this
      */
-    public function colors(array $colors)
+    public function colors(array $colors): self
     {
         return $this->withMeta(['colors' => $colors]);
     }
@@ -63,7 +63,7 @@ class Indicator extends Field
      * @param  string $label
      * @return $this
      */
-    public function unknown(string $label)
+    public function unknown(string $label): self
     {
         return $this->withMeta(['unknownLabel' => $label]);
     }
@@ -73,7 +73,7 @@ class Indicator extends Field
      *
      * @return $this
      */
-    public function withoutLabels()
+    public function withoutLabels(): self
     {
         return $this->withMeta(['withoutLabels' => true]);
     }
@@ -84,7 +84,7 @@ class Indicator extends Field
      * @param  callable|array|mixed  $hideCallback
      * @return $this
      */
-    public function shouldHide($hideCallback)
+    public function shouldHide($hideCallback): self
     {
         $this->hideCallback = $hideCallback;
 
@@ -96,7 +96,7 @@ class Indicator extends Field
      *
      * @return $this
      */
-    public function shouldHideIfNo()
+    public function shouldHideIfNo(): self
     {
         $this->hideCallback = function ($value) {
             return !$value;
@@ -108,7 +108,7 @@ class Indicator extends Field
     /**
      * @inheritDoc
      */
-    public function resolveForDisplay($resource, $attribute = null)
+    public function resolveForDisplay($resource, ?string $attribute = null): void
     {
         parent::resolveForDisplay($resource, $attribute);
 
